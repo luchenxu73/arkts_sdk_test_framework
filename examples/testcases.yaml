@@ -1,0 +1,39 @@
+# Example test case configuration file
+
+testcases:
+  # Example case 1: Basic compilation test
+  - name: "basic_compile_test"
+    path: "C:\\Users\\ChenxuLu\\code\\python_scripts\\interop_sdk\\MyApplication"
+    tags: ["smoke", "basic"]
+    commands:
+      - ["hvigor", "--mode", "module", "-p", "product=default", "assembleHap", "--analyze=normal", "--parallel", "--incremental", "--no-daemon"]
+      - ["C:\\Program Files\\Huawei\\DevEco Studio\\tools\\node\\node.exe", "C:\\Program Files\\Huawei\\DevEco Studio\\tools\\hvigor\\bin\\hvigorw.js", "--mode", "module", "-p", "product=default", "assembleHap", "--analyze=normal", "--parallel", "--incremental", "--no-daemon"]
+    timeout: 300
+
+  # Example case 2: Advanced compilation test
+  - name: "advance_compile_test"
+    path: "C:\\Users\\ChenxuLu\\code\\python_scripts\\interop_sdk\\MyApplication2"
+    tags: ["smoke", "advance"]
+    dependencies: ["basic_compile_test"]
+    commands:
+      - ["hvigor", "--mode", "module", "-p", "product=default", "assembleHap", "--analyze=normal", "--parallel", "--incremental", "--no-daemon"]
+    timeout: 300
+
+  # # Example case 2: Module compilation test
+  # - name: "module_compile_test"
+  #   path: "C:\\Users\\ChenxuLu\\code\\python_scripts\\interop_sdk\\MyApplication"
+  #   tags: ["module", "full"]
+  #   commands:
+  #     - ["hvigor", "-p", "product=default", "assembleHap"]
+  #     - ["hvigor", "-p", "product=default", "assembleHap", "-p", "module=entry"]
+  #     - ["hvigor", "-p", "product=default", "assembleHap", "-p", "module=library"]
+  #   timeout: 600
+
+  # # Example case 3: Clean build test
+  # - name: "clean_build_test"
+  #   path: "C:\\Users\\ChenxuLu\\code\\python_scripts\\interop_sdk\\MyApplication"
+  #   tags: ["full"]
+  #   commands:
+  #     - ["hvigor", "clean"]
+  #     - ["hvigor", "-p", "product=default", "assembleHap"]
+  #   timeout: 300

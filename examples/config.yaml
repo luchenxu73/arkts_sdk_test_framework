@@ -1,0 +1,23 @@
+# Example global configuration file
+
+framework:
+  # Build tools environment configuration
+  build_tools:
+    hvigor_home: "C:\\Program Files\\Huawei\\DevEco Studio\\tools\\hvigor"
+    ohpm_home: "C:\\Program Files\\Huawei\\DevEco Studio\\tools\\ohpm"
+    deveco_sdk_home: "C:\\Program Files\\Huawei\\DevEco Studio\\sdk"
+    ohos_base_sdk_home: "C:\\Program Files\\Huawei\\DevEco Studio\\sdk"
+    java_home: "C:\\Program Files\\Huawei\\DevEco Studio\\jbr"
+    node_home: "C:\\Program Files\\Huawei\\DevEco Studio\\tools\\node"
+
+  # Default timeout (seconds)
+  default_timeout: 600
+
+  # Test results output directory
+  output_dir: "./test_results"
+
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  log_level: "INFO"
+
+  # Retry count on failure (not yet implemented)
+  retry_on_failure: 0
